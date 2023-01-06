@@ -1,0 +1,129 @@
+
+
+
+
+<section class="main-section">
+    <div class="cpbody">
+        <div class="positiontest">
+          <!-- image gallery -->
+              <div class="containimage">
+                  <div class="slidecontainer">
+                      <div id="slideshow">
+<!--                           <img class="imageflex" src="https://res.cloudinary.com/huda-tariq-design/image/upload/v1484581124/iStock-test_i4rt8j.jpg"> -->
+                        <img class="imageflex" src="https://res.cloudinary.com/huda-tariq-design/image/upload/v1484581124/iStock-test2_n37c7a.jpg">
+                        <img class="imageflex" src="https://res.cloudinary.com/huda-tariq-design/image/upload/v1484578659/iStock-475690164_bfxqhu.jpg">
+                        <img class="imageflex" src="https://res.cloudinary.com/huda-tariq-design/image/upload/v1484671451/iStock-test3_i8awzu.jpg">
+<!--                           <img class="imageflex" src="img/print-press-4.png">
+                        <img class="imageflex" src="img/print-press-3.png">
+                        <img class="imageflex" src="img/office-people.png"> -->
+                      </div>
+                  </div>
+                      <div class="overlay">
+                      <h1 class="esb">EMPOWERING SMALL BUSINESSES</h1>
+                      </div>
+                </div>
+        </div>
+    </div> 
+
+
+    <section >
+      <div class="careercontent">
+      <h2 class="sh">Our Mission</h2>  
+      <p>Sigma Technologies was founded to Empower small business owners  in the advertising and marketing sector to boost their sales and profitability. We strive to be a leader by offering high-quality marketing materials through ecommerce and lean manufacturing. 
+      </p>
+      </div>
+
+      <div class="careercontent">
+      <h2 class="sh">Who We Are</h2>  
+      <p>Sigma Technologies offers flexible marketing solutions for business owners in the advertising and marketing sector within North America. With our state-of-the-art manufacturing facility and our online technology, we produce and fulfill over five million orders each year. 
+      </p>
+      <p>
+      In order to provide our clients with innovative solutions, we embrace new developments in e-commerce, manufacturing technology and marketing trends. And everyday, our talented team keeps Sigma Technologies moving towards our company mission.</p>
+      </div>
+
+
+
+        <div>
+            <div class="testcontainer">
+            <div class="textpostion">
+            <img class="flextwo" src="https://res.cloudinary.com/huda-tariq-design/image/upload/v1484581124/iStock-test_i4rt8j.jpg">
+            <div class="blfovrly overlaytwo">
+            <h2 class="blfo">Beliefs</h2> 
+           <p>Everyday at Sigma Technologies, our core beliefs guide us towards achieving our mission as a team.
+            </p>
+            </div>
+            </div>
+            </div>
+        </div>
+
+      <div class="beliefcon">
+      <div class="bdiv">
+          <div class="bcards">
+           
+           <h3 class="hcard">Focus on Customers</h3> 
+            <p>  
+            We care about our customers. Helping small businesses grow is top of mind when we provide innovative, swift solutions for our customers. 
+            </p>
+          </div>
+          <div class="bcards">
+            
+            <h3 class="hcard">Improve the Process</h3> 
+            <p>  
+            We look for the best ways to solve a problem. By focusing on how we can do something better, we can complete projects more easily and efficiently.
+            </p> 
+          </div>
+          <div class="bcards"> 
+            
+            <h3 class="hcard">Take the Risk</h3> 
+            <p>
+            Being bold and taking risks by pursuing new ideas
+            </p>
+          </div>
+          <div class="bcards">
+            
+            <h3 class="hcard">Enjoy the Work</h3>
+            <p>
+            We love what we do. 
+            being professionals at what we do, and having fun doing it.
+            </p>
+          </div>
+          </div>
+      </div>
+      <div class="careercontent">
+      <h2 class="sh">Our Culture</h2>
+      <p>It is our team who makes Sigma Technologies. We come from diverse backgrounds, but we share the same common goal: to empower small business owners in the advertising and marketing sector to boost their sales and profitability.
+      </p>
+      <p>  
+      Sigma Technologies encourages an open culture, where every team member is a hands-on contributor. We are proud to maintain an environment in which employees feel comfortable sharing ideas and suggestions.
+      </p>
+      <p>
+      Our team is made up of ambitious and talented individuals who are crucial to our continued success. While experience is an advantage for our candidates, we favour individuals who are capable and driven.
+      </p>
+
+      </div>
+
+   
+
+    <ng-container *ngFor="let item of carrerGetData">
+        <div class="box">
+            <div class="box-col box-80">
+    
+                <h4>{{item.jobTitle}}</h4>
+                <h6><b>Experience:</b> {{item.Experience}}</h6>
+                <span class="function">{{item.companyName}}</span>
+            </div>
+    
+            <div class="box-col box-20 text-right">
+                <button class="button" routerLink="apply">Apply</button>
+            </div>
+    
+        </div>
+    </ng-container>
+    </section>
+
+
+     
+          
+          
+
+</section>

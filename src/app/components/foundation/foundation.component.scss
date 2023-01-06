@@ -1,0 +1,38 @@
+.different{
+    color: #ee6612;
+    font-size: 27px;
+    font-weight: bolder !important;
+    line-height: 40px;
+    text-align: center;  
+}
+
+.section-header h3 {
+    font-size: 32px;
+    color: rgb(224 230 232);
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    position: relative;
+    margin-top: 84px;
+}
+#foundation{
+    padding-top: 100px;
+    background: linear-gradient(180deg, #191a1a, #161b45) ;
+    background-size: auto;
+    background-repeat: no-repeat;
+ }
+.sequentialflow{
+    margin-left: 308px;
+}
+.seqimage{
+    width: 59%;
+    height: 59%;
+}
+
+// @media only screen and (min-width: 700px) {
+// .seqimage   {
+//     width: 500%;
+//     height: 497%;
+//     margin-left: -249px;
+// }
+// }

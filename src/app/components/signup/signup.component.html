@@ -1,0 +1,295 @@
+<div class="background">
+  <div class="tk-blob" style="--time: 20s; --amount: 5">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 747.2 726.7"
+      style="width: 129px"
+    >
+      <path
+        d="M539.8 137.6c98.3 69 183.5 124 203 198.4 19.3 74.4-27.1 168.2-93.8 245-66.8 76.8-153.8 136.6-254.2 144.9-100.6 8.2-214.7-35.1-292.7-122.5S-18.1 384.1 7.4 259.8C33 135.6 126.3 19 228.5 2.2c102.1-16.8 213.2 66.3 311.3 135.4z"
+      ></path>
+    </svg>
+  </div>
+
+  <div class="container">
+    <form
+      role="form"
+      #signUpForm="ngForm"
+      (ngSubmit)="signUpNewRecord(signUpForm)"
+      id="signUpForm"
+    >
+      <div class="modal-body">
+        <div id="form-container">
+          <p id="description">Please fill in this form to create an account</p>
+          <div class="form">
+            <div class="form-group">
+              <label>First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="signUpDetails.firstname"
+                name="firstname"
+                ngModel
+                #firstname="ngModel"
+                appValidateFirstName
+                required
+              />
+              <span
+                class="text-danger"
+                *ngIf="
+                  (firstname.touched || signUpForm.submitted) &&
+                  firstname.errors?.required
+                "
+              >
+                First Name is required
+              </span>
+              <span
+                class="text-danger"
+                *ngIf="
+                  firstname.touched && firstname.errors?.firstNameNotAvailable
+                "
+              >
+                First Name not available
+              </span>
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="signUpDetails.lastname"
+                name="lastname"
+                ngModel
+                #lastname="ngModel"
+                appValidateLastName
+                required
+              />
+              <span
+                class="text-danger"
+                *ngIf="
+                  (lastname.touched || signUpForm.submitted) &&
+                  lastname.errors?.required
+                "
+              >
+                Last Name is required
+              </span>
+              <span
+                class="text-danger"
+                *ngIf="
+                  lastname.touched && lastname.errors?.lastNameNotAvailable
+                "
+              >
+                Last Name not available
+              </span>
+            </div>
+            <div class="form-group">
+                <label>Date of Filling Form</label>
+                <input
+                  type="datetime-local"
+                  class="form-control"
+                  [(ngModel)]="signUpDetails.date"
+                  name="date"
+                  ngModel
+                  #date="ngModel"
+                  appValidateDate
+                  required
+                />
+                <span
+                  class="text-danger"
+                  *ngIf="
+                    (date.touched || signUpForm.submitted) &&
+                    date.errors?.required
+                  "
+                >
+                dateoffilling is required
+                </span>
+                <span
+                  class="text-danger"
+                  *ngIf="
+                  date.touched && date.errors?.dateoffillingNotAvailable
+                  "
+                >
+                dateoffilling not available
+                </span>
+              </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="signUpDetails.email"
+                name="email"
+                ngModel
+                #email="ngModel"
+                required
+                email
+              />
+              <span
+                class="text-danger"
+                *ngIf="
+                  (email.touched || signUpForm.submitted) &&
+                  email.errors?.required
+                "
+              >
+                Email is required
+              </span>
+              <span
+                class="text-danger"
+                *ngIf="email.touched && email.errors?.email"
+              >
+                Enter a valid email address
+              </span>
+            </div>
+            <div class="form-group">
+              <label>Mobile No</label>
+              <input
+                type="tel"
+                class="form-control"
+                [(ngModel)]="signUpDetails.mobile"
+                id="validationCustom08"
+                name="mobile"
+                ngModel
+                #mobile="ngModel"
+                required
+                mobile
+              />
+              <span
+                class="text-danger"
+                *ngIf="
+                  (mobile.touched || signUpForm.submitted) &&
+                  mobile.errors?.required
+                "
+              >
+                Mobile no is required
+              </span>
+              <span
+                class="text-danger"
+                *ngIf="mobile.touched && mobile.errors?.mobile"
+              >
+                Enter a valid mobile number
+              </span>
+            </div>
+            <!-- <div class="form-group">
+                            <label for="branch">Branch</label>
+                            <select id="branch" name="branch" class="form-control" [(ngModel)]="signUpDetails.mobile" ngModel #branch="ngModel" required branch>
+                              <option value="1">CSE</option>
+                              <option value="2">ETC</option>
+                              <option value="3">Mechanical</option>
+                              <option value="4">Electrical</option>
+                            </select>
+                            <span class="text-danger"
+                                *ngIf="(branch.touched || signUpForm.submitted) && branch.errors?.required">
+                                Branch is required
+                            </span>
+                            <span class="text-danger" *ngIf="branch.touched && branch.errors?.branch">
+                               Choosebranch address
+                            </span>
+                          </div> -->
+            <div class="form-group">
+              <label for="branch">Branch</label>
+              <select id="branch" name="branch" ngModel class="form-control">
+                <option value="CSE">CSE</option>
+                <option value="ETC">ETC</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Electrical">Electrical</option>
+                <option value="MCA">MCA</option>
+                <option value="MBA">MBA</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="specialization">Specialization</label>
+              <select
+                id="specialization"
+                name="specialization"
+                ngModel
+                class="form-control"
+              >
+                <option value="1">Front-End(Angular,React,Html,Css,JS)</option>
+                <option value="2">Backend(SQL,PgSQL,NodeJS,.Net)</option>
+                <option value="3">Full-Stack</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="year">Passing Year</label>
+              <select id="year" name="year" ngModel class="form-control">
+                <option value="2005">2005</option>
+                <option value="2006">2006</option>
+                <option value="2007">2007</option>
+                <option value="2008">2008</option>
+                <option value="2009">2009</option>
+                <option value="2010">2010</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+              </select>
+            </div>
+            <br />
+            <div class="text-center">
+              <button
+                type="button"
+                class="btn btn-primary"
+                type="submit"
+                [disabled]="signUpForm.invalid"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <!-- [disabled]="signUpForm.invalid" -->
+    </form>
+  </div>
+  <div class="tk-blob" style="--fill: #e91e63">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 451.6 385.5"
+      style="width: 129px"
+    >
+      <path
+        d="M381.4 86.5c43.5 48 77.5 110.3 68.8 168.7-8.6 58.4-59.9 113-114.8 126.7-54.9 13.6-113.4-13.7-176.6-40.6-63.1-27-130.7-53.5-151.5-102.8-20.9-49.2 5.1-121.1 50.3-169.5C102.8 20.7 167.1-3.9 225.9.5c58.8 4.5 111.9 38.1 155.5 86z"
+      ></path>
+    </svg>
+  </div>
+  <div class="tk-blob" style="--fill: #3f51b5;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320.6 343.9"  style="width: 129px">
+      <path d="M275.9 63.1c30.7 37.3 50.9 84.2 43 126.9-7.9 42.7-44.1 81.2-93 112.1C177 332.9 115.2 356 70.9 337 26.5 317.9-.4 256.7 0 204.6c.4-52 28-95 59.7-132.5C91.4 34.5 127.1 2.3 165.5.1c38.5-2.2 79.7 25.7 110.4 63z"></path>
+    </svg>
+  </div>
+  <div class="tk-blob" style="--time: 20s; --amount: 5; --fill: #56cbb9">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 747.2 726.7"
+      style="width: 129px"
+    >
+      <path
+        d="M539.8 137.6c98.3 69 183.5 124 203 198.4 19.3 74.4-27.1 168.2-93.8 245-66.8 76.8-153.8 136.6-254.2 144.9-100.6 8.2-214.7-35.1-292.7-122.5S-18.1 384.1 7.4 259.8C33 135.6 126.3 19 228.5 2.2c102.1-16.8 213.2 66.3 311.3 135.4z"
+      ></path>
+    </svg>
+  </div>
+  <div class="tk-blob" style="--fill: #ff4b82">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 319.2 356.7"
+      style="width: 129px"
+    >
+      <path
+        d="M271.9 50.3c30.6 29.3 51.3 75.5 46.6 123.9-4.6 48.4-34.6 99-86.5 136.3s-125.6 61.4-168.3 35.3S9.4 243.5 3.4 177.3C-2.7 111.2-3.1 55.2 24 26.7 51.1-1.9 105.9-2.9 153.4 2.8c47.6 5.8 88 18.2 118.5 47.5z"
+      ></path>
+    </svg>
+  </div>
+</div>
+
+<section></section>

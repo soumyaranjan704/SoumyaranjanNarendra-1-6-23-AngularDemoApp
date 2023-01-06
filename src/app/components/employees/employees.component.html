@@ -1,0 +1,70 @@
+<!-- <div class="container">
+    <div class="row">
+      <div class="search-hero searchData">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a hero by id or name or country">
+      </div>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Id</th>
+          <th>Hero Name</th>
+          <th>Country</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let hero of heroes | filter:searchText">
+          <td>{{hero.id}}</td>
+          <td>{{hero.name}}</td>
+          <td>{{hero.country}}</td>
+        </tr>
+        </tbody>
+      </table>
+    
+    </div>
+  </div> -->
+<div class="container">
+  <h3 class="text-center" style="margin-top: 123px;">Dummy data for Showing the tables with pagination and filter</h3>
+  <div class="search-hero searchData">
+    <input
+      class="form-control"
+      type="text"
+      name="search"
+      [(ngModel)]="searchText"
+      autocomplete="off"
+      placeholder="&#61442;  Start searching  by id or name or body"
+    />
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>TITLE</th>
+        <th>BODY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="
+          let post of POSTS|filter:searchText | paginate: {
+                  itemsPerPage: tableSize,
+                  currentPage: page,
+                  totalItems: count
+                };
+          let i = index
+        "
+      >
+        <th scope="row">{{ post.id }}</th>
+        <td>{{ post.title }}</td>
+        <td>{{ post.body }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="d-flex justify-content-center">
+    <pagination-controls
+      previousLabel="Prev"
+      nextLabel="Next"
+      (pageChange)="onTableDataChange($event)"
+    >
+    </pagination-controls>
+  </div>
+</div>

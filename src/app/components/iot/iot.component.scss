@@ -1,0 +1,33 @@
+.iotstyle{
+    color: #0A1571;
+    font-size: 27px;
+    font-weight: bolder !important;
+    line-height: 40px;
+    text-align: center;  
+}
+
+.img {
+    margin: auto;
+    width: 44%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+  }
+  .shrink img {
+    transition: 1s ease;
+    }
+    
+    .shrink img:hover{
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+    transition: 1s ease;
+    }
+
+    #about{
+        background: linear-gradient(180deg, #0c1414, #133651);
+
+    }
+    #iot{
+        background: linear-gradient(180deg, #0c1414, #133651);
+
+    }
